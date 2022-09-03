@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        h3,#join{
+            margin: 20px 0px 0px 30px;
+        }
+        #join{
+            border-top: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            padding: 20px;
+            width: 480px;
+        }
+        .cols{
+            padding: 5px;
+        }
+        .cols > li{
+            display: inline-block;
+        }
+        .col1{
+            width: 120px;
+        }
+
+        .col2> input, select{
+            width: 200px;
+            height: 25px;
+        }
+        .email> input{
+            width: 100px;
+            height: 20px;
+        }
+        #buttons{
+            width: 510px;
+            text-align: right;
+        }
+        #buttons button{
+            padding: 8px,20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>회원가입 폼</h3>
+    <form>
+        <ul id="join">
+            <li>
+                <ul class="cols">
+                    <li class="col1"> 아이디</li>
+                    <li class="col2">
+                        <input type="text" id="userID">
+                    </li>  
+                </ul>
+            </li>
+            <li>
+                <ul class="cols">
+                    <li class="col1"> 비밀번호</li>
+                    <li class="col2">
+                        <input type="password" id="passwd_confirm">
+                    </li>  
+                </ul>
+            </li>
+            <li >
+                <ul class="cols">
+                    <li class="col1"> 이메일</li>
+                    <li class="email">
+                        <input type="text" id="mailID">@
+                    </li>  
+                    <li>
+                        <select>
+                            <option value="">직접입력</option>
+                            <option value="">naver.com</option>
+                            <option value="">daum.net</option>
+                            <option value="">gmail.com</option>
+                        </select>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id="buttons">
+            <button type="submit">저장하기</button>
+            <button type="reset">취소하기</button>
+        </div>
+    </form>
+
+</body>
+</html>

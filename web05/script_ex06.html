@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="d1" style="background-color: #ffaaff;width: 100px;height: 100px;"></div>
+     <div id="d2" style="background-color: #aaff3b;width: 100px;height: 100px;"></div>
+     <div id="d3" style="background-color: #ea3b00;width: 100px;height: 100px;"></div>
+     <div id="d3" style="width: 100;height: 100px;margin-top: 10px;">
+    <button type="button" onclick="changeD1();">d1 색변경</button>
+    <button type="button" onclick="changeD2();">d2 색변경</button>
+    <button type="button" onclick="changeD3();">d3 색변경</button>
+    </div>
+
+</body>
+<script>
+   function changeD1(){
+     const d1=document.querySelector('#d1');
+     d1.style.backgroundColor=changecolor();
+    
+}
+function changeD2(){
+     const d1=document.querySelector('#d2');
+     d1.style.backgroundColor=changecolor();
+    
+}
+function changeD3(){
+     const d1=document.querySelector('#d3');
+     
+     //색깔 만들기 시작 
+     let colors =[];   //비어있는 배열 선언.
+     for(let i=0; i<3; i++){
+        let temp=Math.floor(Math.random() *255);
+        // 자바의 리스트 add(값)과 같이 쭉쭉 붙여서 넣는 함수 
+        //colors.push(temp.toString(16));
+        //자바의 리스트 add(index,값)과 같이 index를 부여해서 넣는것같은 함수.
+        colors[i]=temp.toString(16);
+        // 배열을 하나의 스트링으로 붙여 출력한다 join(이어붙일 문자);
+        
+     }
+     console.log(colors.join(''));
+     const color ='#'+colors.join('');
+     console.log('color :'+ color);
+     d1.style.backgroundColor=color;
+}
+
+function changecolor(){
+     let color ='#'; 
+     let temp= 0; //임시변수
+     let red= '';  // 빨간색값
+     let green= '';  // 초록색값
+     let blue= '';  // 파란색값
+     temp=Math.floor(Math.random() *255);
+       // 10진수 -->16진수 
+     red= temp.toString(16);
+     temp=Math.floor(Math.random() *255);
+     green= temp.toString(16);
+     temp=Math.floor(Math.random() *255);
+     blue= temp.toString(16);
+      
+     color += red+green+blue;
+     console.log(color);
+     return color;
+}
+</script>
+</html>

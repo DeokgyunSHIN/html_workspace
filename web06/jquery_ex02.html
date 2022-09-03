@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <div style="width: 300px;height: 50px;">
+        <input type="checkbox" name="hobby" id="chk_1" value="여행">여행
+        <input type="checkbox" name="hobby" id="chk_2" value="영화">영화
+        <input type="checkbox" name="hobby" id="chk_3" value="산책">산책
+        <input type="checkbox" name="hobby" id="chk_4" value="등산">등산
+        </div>
+        <div style="width: 220px;height: 10px;text-align: right;">
+            <button type="button" onclick="getHobby()">저장</button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+ <script>
+
+    function getHobby(){
+        //자바 스크립트로 체크박스를 가져오기
+        const checkArry=document.getElementsByName('hobby'); // 배열바입으로 리턴
+        const checkJ=$('input[name="hobby"]') // 배열로 저장하는데 id 값으로 가져온것과 다르게 jquery 객체가 아닌 태그로 가져온다.
+       
+         let hobbies=[];
+        for(let i=0;i<checkArry.length;i++){     // 자바스트립트 alert 출력
+            if(checkArry[i].checked){
+                hobbies.push(checkArry[i].value);
+            }
+        }
+        alert('취미 :'+hobbies.join(','));
+
+        hobbies=[];
+        
+        checkJ.each(function(index, obj){   //제이쿼리로 alert 출력
+            //html 태그 ---> jqurey 객체
+            if($(obj).is(':checked')){
+                // 자바에서 getValue() - getter와 같은 의미
+                hobbies.push($(obj).val());
+            }
+        });
+        alert('취미2 : '+hobbies.join(','));
+    }
+ </script>
+</html>

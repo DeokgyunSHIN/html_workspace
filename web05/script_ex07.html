@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1" style="background-color: #ffaaff;width: 100px;height: 100px;"></div>
+    <div id="d3" style="width: 100;height: 100px;margin-top: 10px;">
+    <button type="button" onclick="startChange();">시작버튼</button>
+    <button type="button" onclick="endChange();">종료버튼</button>
+</body>
+<script>
+    
+     // 전역변수 
+    let intervalID='';
+
+    /* 정해진 시간마다 함수를 호출하는 기능
+       setInterval(수해함수,시간(간격)); // 함수에 접근가능한 id 값을 반환 
+    */
+     function startChange(){
+        if(intervalID.length==0){
+        intervalID=setInterval(changecolor,500);
+     }
+     }
+
+     function endChange(){
+        //interval 함수에서 부여한 id를 이용하여 멈춘다.
+        clearInterval(intervalID);
+        intervalID='';
+     }
+
+     // 색변경 
+     function changecolor(){
+        let divArea=document.getElementById('d1');
+
+        let colors=[];
+        for (let i=0;i<3;i++){
+            let temp=Math.floor(Math.random()*255);
+            colors.push(temp.toString(16));
+        }
+        const color='#'+colors.join('');
+        console.log(colors.join(''));
+        divArea.style.backgroundColor=color;
+     }
+
+</script>
+</html>

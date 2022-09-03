@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{margin-bottom: 15px;}   /*전체에 주고 싶으면 *넣으면 된다. */
+    
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+      }
+    
+    </style>
+</head>
+<body>
+    <!--
+        action  -> form을 전송할 위치
+        methed  -> form을 전송하는 방식 
+    -->
+     <form id="'frm" action="" method="" onsubmit="return false;">     <!-- form 태그 하나의 문서라고 생각하면 됨.-->
+       ＊이름 : <input type="text" style="width:150px;height: 20px; "required><br>
+        취미 : <input type="checkbox" name="hobby" id="hobby_music" value="음악">음악
+        <input type="checkbox" name="hobby" id="hobby_movie" value="영화보기">영화보기<br>
+
+        성별 :<input type="radio" name="gender" id="man" value="남자">남자     
+              <input type="radio" name="gender" id="women" value="여자">여자 <br>
+
+        전화번호 : <select style="width: 60px;height: 25px;" id="phone_fast">
+            <option value="010"selected="selected"> 010</option>     <!--selected = 기본 아무것도 안했을떄 보여주는 벨류값-->
+            <option value="011">011</option>
+            <option value="012">012</option>
+            <option value="02">02</option>
+        </select>&nbsp;-
+        <input type="number"id ="phone_middle" style="width:100px;height: 20px;" autocomplete="on">&nbsp;-
+        <input type="number" id ="phone_last" style="width:100px;height: 20px;"><br>
+
+        메모: <textarea id="memo" rows="10" cols="50" style="resize: none;"></textarea> <br>    
+        <!--style="resize: none -> 메모장 크기 고정--> 
+
+        비밀번호: <input type="password" style="width: 100px;height: 20px;"><br>
+
+        <button type="butten">확인 </button>
+        <input type="reset"  value="초기화">
+        
+
+     </form>
+</body>
+</html>

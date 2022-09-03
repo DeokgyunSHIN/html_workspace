@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 자바스트립트 -함수 & html 연동 </h1>
+    <div style="width: 150px;">
+        숫자1 : <input type="number" id="num01" style="width: 50px;">
+        <br>
+        숫자2 : <input type="number" id="num02" style="width: 50px;">
+    </div>
+    <div style="width: 150px;margin-top: 5px;">
+     합: <span id="result"></span>   
+    
+    </div>
+
+    <div style="width: 150px; text-align: rigth; margin-top: 10px;">
+     <button type="button" onclick="addValue();">더하기</button>    
+    </div>
+</body>
+<script>
+    function add(x,y){
+        return x+y;
+    }
+    function addValue(){
+        // 스크립트에서 thml 태그의 값을 가져올수 있다.
+        // let num01 =document.getElementById('num1') 만 하면 태그를 받아온다  (값 x)
+
+         let num01 =document.getElementById('num01').value;
+         num01= document.querySelector('#num01').value;
+         // id= '#'+id명  / class 명 ='.'+id명 
+         let num02= document.querySelector('#num02').value;
+
+         const result =Number(num01) + Number(num02);
+
+         document.querySelector('#result').innerHTML=result;
+    }
+
+
+    // 자바스크립트는 파라메터로 함수도 넘길수 있다.
+    //console.log(add(1,10));
+</script>
+</html>

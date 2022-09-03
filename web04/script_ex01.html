@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     /*
+     자바스크립트 영역 (여러 줄 주석)
+      가독성이 좋지 않기때문에 body 끝난다음에 자바스크립트를
+      넣어두는것이 좋다.
+     */
+     //자바 스트립트 주석은 자바와 거의 같다.
+
+     // 콘솔에 쓰기 
+    console.log('안녕하세요');
+     //문서에쓰기
+    document.write('안녕하세요');
+
+     //자바스트립트는 데이터의 타입이 없다! 
+     // var let const 
+     var num01 = 10;
+     let num02 = 10.5;
+     const num03= 10.11;  // 자바의 final변수와 같다. 즉 초기화값을 변경 불가
+
+     console.log("var 타입 : "+num01);
+     console.log("let 타입 : "+num02);
+     console.log("const 타입 : "+num03);
+    // num03=11.234;
+     console.log("const 타입 : "+num03);
+     
+     if(true){
+        var num04 = 10;   // var는 무조건은 아니지만if문이 끝나도 살아난다.
+        let num05 = 10;   // if문 이 끝나면 알고 있던대로 죽는다.
+     }
+     console.log("num04 : "+num04);
+     console.log("num05 : "+num05);
+
+</script>
+</html>

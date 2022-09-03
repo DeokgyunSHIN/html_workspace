@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h3>이벤트2 - confirm</h3>
+</body>
+<script>
+      // 사용자에게 진행에 대한 답을 받기 위한 이벤트 함수
+      // 확인 -true 취소 -false 를 반환한다.
+    const isConfirm= confirm('정말 삭제하시겠습니까?');
+     
+    if(isConfirm) {
+        alert('삭제되었습니다.');   
+    }else {
+        alert('삭제가 취소되었습니다.')
+    }
+    </script>
+</html>
